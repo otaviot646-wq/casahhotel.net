@@ -1,10 +1,4 @@
 RewriteEngine On
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} ^www\.casahotel\.net [NC]
-RewriteRule ^(.*)$ https://casahotel.net[L,R=301]
-
-<files ~ "^.*\.([Hh][Tt][Aa])">
-Order allow,deny
-Deny from all
-Satisfy All
-</files>
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
