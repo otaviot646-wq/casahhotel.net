@@ -2,7 +2,7 @@ const tls = require('tls');
 const fs = require('fs');
 
 const options = {
-  key: fs.readFileSync('server-key.pem'),
+  key: fs.readFileSync('casahotel.key'),
   cert: fs.readFileSync('casahotel.net')
 };
 
