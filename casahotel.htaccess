@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.casahotel\.net [NC]
+RewriteRule ^(.*)$ https://casahotel.net[L,R=301]
