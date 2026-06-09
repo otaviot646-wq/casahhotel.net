@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const options = {
   key: fs.readFileSync('server-key.pem'),
-  cert: fs.readFileSync('server-cert.pem')
+  cert: fs.readFileSync('casahotel.net')
 };
 
 const server = tls.createServer(options, (socket) => {
